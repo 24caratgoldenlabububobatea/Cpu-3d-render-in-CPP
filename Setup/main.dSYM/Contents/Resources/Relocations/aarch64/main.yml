@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/51rasjon/Documents/C++/Setup/main'
+relocations:     []
+...
