@@ -12,6 +12,7 @@
 
 #include <time.h>
 #include "Vect.h"
+#include "Ray.h"
 
 
 using namespace std;
