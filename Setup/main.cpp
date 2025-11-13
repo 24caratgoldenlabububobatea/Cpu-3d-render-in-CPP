@@ -14,6 +14,8 @@
 #include "Vect.h"
 #include "Ray.h"
 
+#include "Camera.h"
+
 
 using namespace std;
 
@@ -101,6 +103,20 @@ int main(int argc, char *argv[]) {
     int dpi = 72;
 
     RGBtype *data = new RGBtype[width * height];
+
+    Vect X (1,0,0);
+    Vect Y (0,1,0);
+    Vect Z (0,0,1); 
+
+   Vect campos(3, 1.5, -4);
+
+    Vect look_at (0, 0, 0);
+    Vect diff_btw (campos.getVectX() - look_at.getVectX(), campos.getVectY() - look_at.getVectY(), campos.getVectZ() - look_at.getVectZ());
+
+    Vect camdir = diff_btw.negative().normalize();
+    Vect camright = Y.crossProduct(camdir).normalize();
+    Vect camdown = camright.crossProduct(camdir);
+    Camera scene_cam (campos, camdir, camright, camdown);
 
     for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
