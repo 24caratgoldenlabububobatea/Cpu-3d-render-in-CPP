@@ -1,5 +1,5 @@
-#ifndef RAY_H
-#define RAY_H
+#ifndef _RAY_H
+#define _RAY_H
 
 #include "Vect.h"
 
@@ -13,8 +13,8 @@ class Ray {
     Ray (Vect, Vect);
 
     //method functions
-    Vect getRayOrigin() { return origin;}
-    Vect getRayDirection() { return direction;}
+    Vect getRayOrigin () { return origin;}
+    Vect getRayDirection () { return direction;}
 
 };
 
