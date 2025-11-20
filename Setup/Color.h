@@ -4,37 +4,39 @@
 class Color {
     double red, green, blue, special;
 
-    public:
+public:
 
-    Color ();
+    Color();
+    Color(double, double, double, double);
 
-    Color (double, double, double, double);
+    // getters
+    double getColorRed() const { return red; }
+    double getColorGreen() const { return green; }
+    double getColorBlue() const { return blue; }
+    double getColorSpecial() const { return special; }
 
-    //method functions
-    double getColorRed() { return red; }
-    double getColorGreen() { return green; }
-    double getColorBlue() { return blue; }
-    double getColorSpecial() { return special; }
-    //you might need to change these to void since they don't return anything
-    double setColorRed(double redValue) { red = redValue; }
-    double setColorGreen(double greenValue) { green = greenValue; }
-    double setColorBlue(double blueValue) { blue = blueValue; }
-    double setColorSpecial(double specialValue) { special = specialValue; }
-
-
+    // chainable setters
+    Color& setColorRed(double redValue) { red = redValue; return *this; }
+    Color& setColorGreen(double greenValue) { green = greenValue; return *this; }
+    Color& setColorBlue(double blueValue) { blue = blueValue; return *this; }
+    Color& setColorSpecial(double specialValue) { special = specialValue; return *this; }
 };
 
-Color::Color () {
+
+// default constructor
+Color::Color() {
     red = 0.5;
     green = 0.5;
     blue = 0.5;
+    special = 0.0;
 }
 
-Color::Color (double r, double g, double b, double s) {
+// full constructor
+Color::Color(double r, double g, double b, double s) {
     red = r;
     green = g;
     blue = b;
     special = s;
 }
 
-#endif 
+#endif
