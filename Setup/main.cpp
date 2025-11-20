@@ -15,6 +15,8 @@
 #include "Ray.h"
 
 #include "Camera.h"
+#include "Color.h"
+#include "Light.h"
 
 
 using namespace std;
@@ -117,6 +119,8 @@ int main(int argc, char *argv[]) {
     Vect camright = Y.crossProduct(camdir).normalize();
     Vect camdown = camright.crossProduct(camdir);
     Camera scene_cam (campos, camdir, camright, camdown);
+
+
 
     for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
